@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Mile to KM App</title>
+    <style>
+        /* ใช้ CSS แทนแท็ก <center> เพื่อให้ตรงตามมาตรฐาน HTML5 */
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Miles to Kilometers Program</h2>
+
+    <script>
+        // แปลงค่าที่รับจาก prompt ให้เป็นตัวเลขทศนิยมทันที
+        let m = parseFloat(prompt("Enter miles:"));
+        
+        // ตรวจสอบว่าผู้ใช้กรอกตัวเลขจริงหรือไม่
+        if (isNaN(m)) {
+            document.write("<h3>กรุณากรอกข้อมูลเป็นตัวเลขเท่านั้น</h3>");
+        } else {
+            let km = 1.609344 * m;
+            
+            // เปิดและปิดแท็ก h3 ให้สมบูรณ์ (.toFixed(2) ช่วยปัดเศษทศนิยมให้เหลือ 2 ตำแหน่ง)
+            document.write("<h3>Miles: " + m + "</h3>");
+            document.write("<h3>Kilometers: " + km.toFixed(10) + "</h3>");
+        }
+    </script>
+
+</body>
+</html>
